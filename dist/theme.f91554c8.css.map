@@ -1,0 +1,1 @@
+{"version":3,"sources":["theme.css"],"names":[],"mappings":"AAAA;AACA;AACA;AACA;AACA;AACA;AACA;AACA;AACA","file":"theme.f91554c8.css","sourceRoot":"..","sourcesContent":["body {\n  background: #666;\n}\n\n.container {\n  padding-top: 5rem;\n  width: 800px;\n  margin: 0 auto;\n}"]}
