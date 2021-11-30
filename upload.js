@@ -1,3 +1,10 @@
+function bytesToSize(bytes) {
+  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
+  if (!bytes) return '0 Byte';
+  const i = parseInt(Math.floor(Math.log(bytes) / Math.log(1024)));
+  return Math.round(bytes / Math.pow(1024, i)) + '' + sizes[i];
+}
+
 export function upload(selector, options = {}) {
   const input = document.querySelector(selector);
   const preview = document.createElement('div');
@@ -26,6 +33,8 @@ export function upload(selector, options = {}) {
 
     const files  =  Array.from(event.target.files);
 
+    preview.innerHTML = '';
+
     files.forEach( file => {
       if(!file.type.match('image')) return
 
@@ -35,7 +44,12 @@ export function upload(selector, options = {}) {
         const src = event.target.result;
         preview.insertAdjacentHTML('afterbegin', `
         <div class="preview-image"/>
+        <div class="preview-remove">&times;</div>
           <img src="${src}" alt="${file.name}"/>
+          <div class="preview-info">
+            <span>${file.name}</span>
+            ${file.size}
+          </div>
         </div>
         `);
       }
