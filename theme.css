@@ -47,3 +47,19 @@ body {
 input[type=file] {
   display: none;
 }
+
+.preview {
+  display: flex;
+  flex-wrap: wrap;
+  padding: .5rem;
+}
+
+.preview-image {
+  margin-bottom: .5rem;
+  margin-right: .5rem;
+}
+
+.preview-image img {
+  width: 180px;
+  height: auto;
+}
